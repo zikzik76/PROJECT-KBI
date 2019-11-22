@@ -1,0 +1,264 @@
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\roslyn\csc.exe
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\roslyn\System.Collections.Immutable.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\roslyn\System.Reflection.Metadata.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\roslyn\vbc.exe
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\roslyn\VBCSCompiler.exe
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\roslyn\VBCSCompiler.exe.config
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Penjaminan.dll.config
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Penjaminan.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Penjaminan.pdb
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Antlr3.Runtime.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\AspNet.ScriptManager.bootstrap.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\AspNet.ScriptManager.jQuery.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\EntityFramework.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\EntityFramework.SqlServer.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.AspNet.FriendlyUrls.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.Google.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.ScriptManager.MSAjax.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.ScriptManager.WebForms.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Web.Infrastructure.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Newtonsoft.Json.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Owin.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\System.Web.Optimization.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\System.Web.Providers.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\WebGrease.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\System.Web.Optimization.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Antlr3.Runtime.pdb
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Newtonsoft.Json.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.AspNet.FriendlyUrls.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\EntityFramework.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\EntityFramework.SqlServer.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\System.Web.Providers.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.Google.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\obj\Debug\Penjaminan.dll
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\obj\Debug\Penjaminan.pdb
+D:\Project\Penjaminan\Penjaminan\bin\roslyn\csc.exe
+D:\Project\Penjaminan\Penjaminan\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Project\Penjaminan\Penjaminan\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Project\Penjaminan\Penjaminan\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Project\Penjaminan\Penjaminan\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Project\Penjaminan\Penjaminan\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Project\Penjaminan\Penjaminan\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Project\Penjaminan\Penjaminan\bin\roslyn\System.Collections.Immutable.dll
+D:\Project\Penjaminan\Penjaminan\bin\roslyn\System.Reflection.Metadata.dll
+D:\Project\Penjaminan\Penjaminan\bin\roslyn\vbc.exe
+D:\Project\Penjaminan\Penjaminan\bin\roslyn\VBCSCompiler.exe
+D:\Project\Penjaminan\Penjaminan\bin\roslyn\VBCSCompiler.exe.config
+D:\Project\Penjaminan\Penjaminan\bin\Penjaminan.dll.config
+D:\Project\Penjaminan\Penjaminan\bin\Penjaminan.dll
+D:\Project\Penjaminan\Penjaminan\bin\Penjaminan.pdb
+D:\Project\Penjaminan\Penjaminan\bin\Antlr3.Runtime.dll
+D:\Project\Penjaminan\Penjaminan\bin\AspNet.ScriptManager.bootstrap.dll
+D:\Project\Penjaminan\Penjaminan\bin\AspNet.ScriptManager.jQuery.dll
+D:\Project\Penjaminan\Penjaminan\bin\EntityFramework.dll
+D:\Project\Penjaminan\Penjaminan\bin\EntityFramework.SqlServer.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.Google.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.ScriptManager.WebForms.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Web.Infrastructure.dll
+D:\Project\Penjaminan\Penjaminan\bin\Newtonsoft.Json.dll
+D:\Project\Penjaminan\Penjaminan\bin\Owin.dll
+D:\Project\Penjaminan\Penjaminan\bin\System.Web.Optimization.dll
+D:\Project\Penjaminan\Penjaminan\bin\System.Web.Providers.dll
+D:\Project\Penjaminan\Penjaminan\bin\WebGrease.dll
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Project\Penjaminan\Penjaminan\bin\System.Web.Optimization.xml
+D:\Project\Penjaminan\Penjaminan\bin\Antlr3.Runtime.pdb
+D:\Project\Penjaminan\Penjaminan\bin\Newtonsoft.Json.xml
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\Project\Penjaminan\Penjaminan\bin\EntityFramework.xml
+D:\Project\Penjaminan\Penjaminan\bin\EntityFramework.SqlServer.xml
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Project\Penjaminan\Penjaminan\bin\System.Web.Providers.xml
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.xml
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.xml
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.Google.xml
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Project\Penjaminan\Penjaminan\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Project\Penjaminan\Penjaminan\obj\Debug\Penjaminan.dll
+D:\Project\Penjaminan\Penjaminan\obj\Debug\Penjaminan.pdb
+F:\Source Code\Penjaminan\Penjaminan\Penjaminan\obj\Debug\Penjaminan.csprojResolveAssemblyReference.cache
+D:\Project\Penjaminan\Penjaminan\obj\Debug\Penjaminan.csprojResolveAssemblyReference.cache
+E:\project\Penjaminan\bin\roslyn\csc.exe
+E:\project\Penjaminan\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\project\Penjaminan\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\project\Penjaminan\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\project\Penjaminan\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\project\Penjaminan\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\project\Penjaminan\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\project\Penjaminan\bin\roslyn\System.Collections.Immutable.dll
+E:\project\Penjaminan\bin\roslyn\System.Reflection.Metadata.dll
+E:\project\Penjaminan\bin\roslyn\vbc.exe
+E:\project\Penjaminan\bin\roslyn\VBCSCompiler.exe
+E:\project\Penjaminan\bin\roslyn\VBCSCompiler.exe.config
+E:\project\Penjaminan\bin\Penjaminan.dll.config
+E:\project\Penjaminan\bin\Penjaminan.dll
+E:\project\Penjaminan\bin\Penjaminan.pdb
+E:\project\Penjaminan\bin\Antlr3.Runtime.dll
+E:\project\Penjaminan\bin\AspNet.ScriptManager.bootstrap.dll
+E:\project\Penjaminan\bin\AspNet.ScriptManager.jQuery.dll
+E:\project\Penjaminan\bin\EntityFramework.dll
+E:\project\Penjaminan\bin\EntityFramework.SqlServer.dll
+E:\project\Penjaminan\bin\Microsoft.AspNet.FriendlyUrls.dll
+E:\project\Penjaminan\bin\Microsoft.AspNet.Identity.Core.dll
+E:\project\Penjaminan\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\project\Penjaminan\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\project\Penjaminan\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+E:\project\Penjaminan\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\project\Penjaminan\bin\Microsoft.Owin.dll
+E:\project\Penjaminan\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\project\Penjaminan\bin\Microsoft.Owin.Security.Cookies.dll
+E:\project\Penjaminan\bin\Microsoft.Owin.Security.dll
+E:\project\Penjaminan\bin\Microsoft.Owin.Security.Facebook.dll
+E:\project\Penjaminan\bin\Microsoft.Owin.Security.Google.dll
+E:\project\Penjaminan\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\project\Penjaminan\bin\Microsoft.Owin.Security.OAuth.dll
+E:\project\Penjaminan\bin\Microsoft.Owin.Security.Twitter.dll
+E:\project\Penjaminan\bin\Microsoft.ScriptManager.MSAjax.dll
+E:\project\Penjaminan\bin\Microsoft.ScriptManager.WebForms.dll
+E:\project\Penjaminan\bin\Microsoft.Web.Infrastructure.dll
+E:\project\Penjaminan\bin\Newtonsoft.Json.dll
+E:\project\Penjaminan\bin\Owin.dll
+E:\project\Penjaminan\bin\System.Web.Optimization.dll
+E:\project\Penjaminan\bin\System.Web.Providers.dll
+E:\project\Penjaminan\bin\WebGrease.dll
+E:\project\Penjaminan\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\project\Penjaminan\bin\System.Web.Optimization.xml
+E:\project\Penjaminan\bin\Antlr3.Runtime.pdb
+E:\project\Penjaminan\bin\Newtonsoft.Json.xml
+E:\project\Penjaminan\bin\Microsoft.AspNet.FriendlyUrls.xml
+E:\project\Penjaminan\bin\EntityFramework.xml
+E:\project\Penjaminan\bin\EntityFramework.SqlServer.xml
+E:\project\Penjaminan\bin\Microsoft.AspNet.Identity.Core.xml
+E:\project\Penjaminan\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\project\Penjaminan\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\project\Penjaminan\bin\System.Web.Providers.xml
+E:\project\Penjaminan\bin\Microsoft.Owin.xml
+E:\project\Penjaminan\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\project\Penjaminan\bin\Microsoft.Owin.Security.xml
+E:\project\Penjaminan\bin\Microsoft.Owin.Security.Facebook.xml
+E:\project\Penjaminan\bin\Microsoft.Owin.Security.Cookies.xml
+E:\project\Penjaminan\bin\Microsoft.Owin.Security.Google.xml
+E:\project\Penjaminan\bin\Microsoft.Owin.Security.Twitter.xml
+E:\project\Penjaminan\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\project\Penjaminan\bin\Microsoft.Owin.Security.OAuth.xml
+E:\project\Penjaminan\obj\Debug\Penjaminan.dll
+E:\project\Penjaminan\obj\Debug\Penjaminan.pdb
+E:\project\Penjaminan\obj\Debug\Penjaminan.csprojResolveAssemblyReference.cache
+D:\project\Penjaminan\bin\roslyn\csc.exe
+D:\project\Penjaminan\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\project\Penjaminan\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\project\Penjaminan\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\project\Penjaminan\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\project\Penjaminan\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\project\Penjaminan\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\project\Penjaminan\bin\roslyn\System.Collections.Immutable.dll
+D:\project\Penjaminan\bin\roslyn\System.Reflection.Metadata.dll
+D:\project\Penjaminan\bin\roslyn\vbc.exe
+D:\project\Penjaminan\bin\roslyn\VBCSCompiler.exe
+D:\project\Penjaminan\bin\roslyn\VBCSCompiler.exe.config
+D:\project\Penjaminan\bin\Penjaminan.dll.config
+D:\project\Penjaminan\bin\Penjaminan.dll
+D:\project\Penjaminan\bin\Penjaminan.pdb
+D:\project\Penjaminan\bin\Antlr3.Runtime.dll
+D:\project\Penjaminan\bin\AspNet.ScriptManager.bootstrap.dll
+D:\project\Penjaminan\bin\AspNet.ScriptManager.jQuery.dll
+D:\project\Penjaminan\bin\EntityFramework.dll
+D:\project\Penjaminan\bin\EntityFramework.SqlServer.dll
+D:\project\Penjaminan\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\project\Penjaminan\bin\Microsoft.AspNet.Identity.Core.dll
+D:\project\Penjaminan\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\project\Penjaminan\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\project\Penjaminan\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\project\Penjaminan\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\project\Penjaminan\bin\Microsoft.Owin.dll
+D:\project\Penjaminan\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\project\Penjaminan\bin\Microsoft.Owin.Security.Cookies.dll
+D:\project\Penjaminan\bin\Microsoft.Owin.Security.dll
+D:\project\Penjaminan\bin\Microsoft.Owin.Security.Facebook.dll
+D:\project\Penjaminan\bin\Microsoft.Owin.Security.Google.dll
+D:\project\Penjaminan\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\project\Penjaminan\bin\Microsoft.Owin.Security.OAuth.dll
+D:\project\Penjaminan\bin\Microsoft.Owin.Security.Twitter.dll
+D:\project\Penjaminan\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\project\Penjaminan\bin\Microsoft.ScriptManager.WebForms.dll
+D:\project\Penjaminan\bin\Microsoft.Web.Infrastructure.dll
+D:\project\Penjaminan\bin\Newtonsoft.Json.dll
+D:\project\Penjaminan\bin\Owin.dll
+D:\project\Penjaminan\bin\System.Web.Optimization.dll
+D:\project\Penjaminan\bin\System.Web.Providers.dll
+D:\project\Penjaminan\bin\WebActivatorEx.dll
+D:\project\Penjaminan\bin\WebGrease.dll
+D:\project\Penjaminan\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\project\Penjaminan\bin\System.Web.Optimization.xml
+D:\project\Penjaminan\bin\Antlr3.Runtime.pdb
+D:\project\Penjaminan\bin\Newtonsoft.Json.xml
+D:\project\Penjaminan\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\project\Penjaminan\bin\EntityFramework.xml
+D:\project\Penjaminan\bin\EntityFramework.SqlServer.xml
+D:\project\Penjaminan\bin\Microsoft.AspNet.Identity.Core.xml
+D:\project\Penjaminan\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\project\Penjaminan\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\project\Penjaminan\bin\System.Web.Providers.xml
+D:\project\Penjaminan\bin\Microsoft.Owin.xml
+D:\project\Penjaminan\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\project\Penjaminan\bin\Microsoft.Owin.Security.xml
+D:\project\Penjaminan\bin\Microsoft.Owin.Security.Facebook.xml
+D:\project\Penjaminan\bin\Microsoft.Owin.Security.Cookies.xml
+D:\project\Penjaminan\bin\Microsoft.Owin.Security.Google.xml
+D:\project\Penjaminan\bin\Microsoft.Owin.Security.Twitter.xml
+D:\project\Penjaminan\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\project\Penjaminan\bin\Microsoft.Owin.Security.OAuth.xml
+D:\project\Penjaminan\obj\Debug\Penjaminan.dll
+D:\project\Penjaminan\obj\Debug\Penjaminan.pdb
