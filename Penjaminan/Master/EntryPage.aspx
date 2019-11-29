@@ -1,79 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EntryMitraWorkProgress.aspx.cs" Inherits="Penjaminan.Penjaminan.EntryMitraWorkProgress" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EntryPage.aspx.cs" Inherits="Penjaminan.Master.EntryPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <style>
-        input[type=date]::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            display: none;
-
-        }
-    </style>
     <script>
-        function backAdd() {
-            window.location.replace(window.location.origin + '/Penjaminan/EntryMitra?eType=add');
-        }
-
-        function backEdit() {
-            window.location.replace(window.location.origin + '/Penjaminan/EntryMitra?eType=edit');
-        }
-        function tTglPelaksanaan() {
-            //debugger;
-            var date = new Date();
-            var field = date.getFullYear().toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) +
-                '-' + (date.getDate() - 1).toString().padStart(2, 0);
-            document.getElementById("MainContent_txtTanggalPelaksanaan").max = field;           
-            document.getElementById("MainContent_txtTanggalSerah").disabled = false;
-        };
-        function tTglSerah() {
-            //debugger;
-            var date2 = document.getElementById("MainContent_txtTanggalPelaksanaan").value;
-            document.getElementById("MainContent_txtTanggalSerah").min = date2;
+        function back() {
+            window.location.replace(window.location.origin + '/Master/ViewPage');
         }
     </script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            //Validasi untuk format Rupiah
-            $("input[data-type='currency']").on({
-                keyup: function () {
-                    formatCurrency($(this));
-                },
-                blur: function () {
-                    formatCurrency($(this), "blur");
-                }
-            });
-            function formatNumber(n) {
-                return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".")
-                debugger;
-            }
-
-            function formatCurrency(input, blur) {
-                debugger;
-                var input_val = input.val();
-
-                if (input_val === "") { return; }
-
-                var original_len = input_val.length;
-
-                if (input_val.indexOf(".") >= 0) {
-
-                    var decimal_pos = input_val.indexOf(".");
-
-                    var left_side = input_val.substring(0, decimal_pos);
-                    var right_side = input_val.substring(decimal_pos);
-
-                    left_side = formatNumber(left_side);
-
-                    right_side = formatNumber(right_side);
-
-                    input_val = "Rp" + left_side + ". " + right_side;
-                } else {
-                    input_val = formatNumber(input_val);
-                    input_val = "Rp. " + input_val;
-                }
-
-                input.val(input_val);
-            }
-        });
-        </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
@@ -82,10 +13,10 @@
                 <a class="navbar-brand" href="#pablo"><asp:Label runat="server" ID="lblMenu" Text="" /></a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="navbar-toggler-icon icon-bar"></span>
-                <span class="navbar-toggler-icon icon-bar"></span>
-                <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end">
                 <form class="navbar-form">
@@ -140,6 +71,7 @@
             </div>
         </div>
     </nav>
+    <!-- End Navbar -->
     <div class="content">
         <div class="container-fluid">
             <div class="row">
@@ -151,58 +83,66 @@
                             </div>
                         </div>
                         <div class="card-body ">
-                            <form method="post" class="form-horizontal" autocomplete="off" runat="server">
+                            <form method="post" runat="server">
                                 <input type="hidden" id="txtId" value="" runat="server">
+
                                 <div class="row">
-                                    <label class="col-sm-2 col-form-label">Nama Pekerjaan</label>
+                                    <label class="col-sm-2 col-form-label">Name</label>
+                                    <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="txtName" value="" runat="server">
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <label class="col-sm-2 col-form-label">Control</label>
+                                    <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="txtControl" value="" runat="server">
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <label class="col-sm-2 col-form-label">Active</label>
+                                    <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="txtActive" value="" runat="server">
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <label class="col-sm-2 col-form-label">Icon</label>
+                                    <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="txtIcon" value="" runat="server">
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <label class="col-sm-2 col-form-label">Menu Parent</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="txtName" value="" runat="server">
+                                            <asp:DropDownList ID="listmenuparent" runat="server" class="selectpicker" AutoPostBack="true" OnSelectedIndexChanged="itemSelectedPage">
+                                            </asp:DropDownList>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <label class="col-sm-2 col-form-label">Lokasi</label>
-                                    <div class="col-sm-10">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="txtLokasi" value="" runat="server">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <label class="col-sm-2 col-form-label">Tanggal Pelaksanaan</label>
-                                    <div class="col-sm-10">
-                                        <div class="form-group">
-                                            <input type="date" class="form-control" id="txtTanggalPelaksanaan" value="" runat="server" onclick="tTglPelaksanaan();" onkeydown="return false" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <label class="col-sm-2 col-form-label">Nilai</label>
-                                    <div class="col-sm-10">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="txtNilai" value="" runat="server" data-type="currency" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <label class="col-sm-2 col-form-label">Tanggal Serah</label>
-                                    <div class="col-sm-10">
-                                        <div class="form-group">
-                                            <input type="date" class="form-control" id="txtTanggalSerah" value="" runat="server" onclick="tTglSerah();" onkeydown="return false" disabled required>
-                                        </div>
-                                    </div>
-                                </div>
+
                                 <div class="row">
                                     <label class="col-sm-2 col-form-label label-checkbox">&nbsp;</label>
                                     <div class="col-sm-10 checkbox-radios">
-                                        <div class="form-check form-check-inline">
-                                            <asp:Button type="submit" class="btn btn-success btn-round" onclick="btnSubmit_Click" Text="Save" runat="server"/>
-                                            <button type="reset" class="btn btn-warning btn-round">Reset</button>
-                                            <button type="button" class="btn btn-danger btn-round" onclick="javascript:backAdd();">Cancel</button>
-                                        </div>
+                                    <div class="form-check form-check-inline">
+                                        <asp:button type="submit" class="btn btn-success btn-round" runat="server" onclick="btnSubmit_click" Text="Save"></asp:button>
+                                        <button type="reset" class="btn btn-warning btn-round">Reset</button>
+                                        <button type="button" class="btn btn-danger btn-round" onclick="javascript:back();">Cancel</button>
+                                    </div>
                                     </div>
                                 </div>
+
                             </form>
                         </div>
                     </div>

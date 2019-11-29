@@ -51,6 +51,28 @@ namespace Penjaminan.Models
                 throw new ApplicationException("Failed to load Employee data : " + ex.Message);
             }
         }
+        public static PenjaminanDataset.u_roleRow validasi(string Nama)
+        {
+            PenjaminanDatasetTableAdapters.u_roleTableAdapter ta = new PenjaminanDatasetTableAdapters.u_roleTableAdapter();
+            PenjaminanDataset.u_roleDataTable dt = new PenjaminanDataset.u_roleDataTable();
+            PenjaminanDataset.u_roleRow dr = null;
+
+            try
+            {
+                ta.FillByName(dt, Nama);
+
+                if (dt.Count > 0)
+                {
+                    dr = dt[0];
+                }
+
+                return dr;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Failed to load Employee data : " + ex.Message);
+            }
+        }
         public static void UpdateData(int Id, string Name, string Description)
         {
             PenjaminanDatasetTableAdapters.u_roleTableAdapter ta = new PenjaminanDatasetTableAdapters.u_roleTableAdapter();

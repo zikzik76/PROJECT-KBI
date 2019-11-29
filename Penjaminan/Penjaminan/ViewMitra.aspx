@@ -73,13 +73,19 @@
     </nav>
     <!-- End Navbar -->
     <div class="content">
+        <% var user = (Penjaminan.Models.PenjaminanDataset.UserProfileRow)Session["UserProfile"];%>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header card-header-warning">
+                        <%if (user.role == "4")
+                            {
+                                 %>
+                                <div class="card-header card-header-warning">
                             <button class="btn btn-warning btn-round" onclick="javascript:add()">Create</button>
                         </div>
+                        <%} %>
+                        
                         <div class="card-body">
                             <div class="toolbar"></div>
                             <div class="material-datatables">
@@ -93,7 +99,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <% int i = 0; %>
+                                        <% int i = 0; %>                                             
+                                        <%var statusWf = "0";                %>
+                                        <%var flag = 0;                      %>
+                                        <%var flag2 = "no";                  %>     
+                                        <%flag = int.Parse(user.role);
+                                            flag = flag - 1;                   %>                              
                                         <% foreach (Penjaminan.Models.PenjaminanDataset.m_mitraRow dr in ((Penjaminan.Models.PenjaminanDataset.m_mitraDataTable) Session["mitraDt"]).Rows) { %>
                                         <% i++; %>
                                          <tr>
@@ -101,25 +112,67 @@
                                             <td><%= dr.name %></td>
                                             <td><%= dr.latarbelakang %></td>
                                             <td class="text-center">
-                                                <a href="/Penjaminan/EntryMitra?eID=<%= dr.id %>&eType=edit" class="btn btn-link btn-primary btn-just-icon like"><i class="material-icons">edit</i></a>                                               
 
-                                                 <%if (Convert.ToInt32(dr.statusMitra) == 1)
-                                                {
+                                                <%-- buat hanya admin yg bisa edit creat dan delete--%>
+                                                <%if (user.role == "4")
+                                                    {
                                                         %>
-                                                <a href="#" class="btn btn-link btn-success   btn-just-icon like" ><i class="fa fa-eye"></i></a>
-                                                <%} %>
-                                                <%else if (Convert.ToInt32(dr.statusMitra) == 2)
-    {%>
-                                                <a href="#" class="btn btn-link btn-danger   btn-just-icon like" ><i class="fa fa-eye"></i></a>
+                                                         <a href="/Penjaminan/EntryMitra?eID=<%= dr.id %>&eType=edit" class="btn btn-link btn-primary btn-just-icon like"><i class="material-icons">edit</i></a>
+                                                          
+                                                         <%if (Convert.ToInt32(dr.statusMitra) == 1)
+                                                                { %>
+                                                                    <a href="#" class="btn btn-link btn-success   btn-just-icon like" ><i class="fa fa-eye"></i></a>
+                                                                    <%} %>
+                                                                    <%else if (Convert.ToInt32(dr.statusMitra) == 2)
+                                                                     {%>
+                                                                    <a href="#" class="btn btn-link btn-danger   btn-just-icon like" ><i class="fa fa-eye"></i></a>
+                                                         <%} %>
+                                                         <%else
+                                                                {%>
+                                                                         <a href="#" class="btn btn-link btn-primary btn-just-icon like" ><i class="fa fa-eye"></i></a>
+                                                                <%} %>                                               
                                                 <%} %>
                                                
-                                                
-                                                <%else
-    {
-                                                         %>
-                                                <a href="/Penjaminan/PreviewMitra?eID=<%= dr.id %>&eType=preview" class="btn btn-link btn-primary btn-just-icon like" ><i class="fa fa-eye"></i></a>
-                                                <%} %>
-                                                <a href="/Penjaminan/EntryMitra?eID=<%= dr.id %>&eType=delete" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
+                                                 <%if (user.role != "4")
+                                                    {
+                                                        %>
+                                                            <%--disni kondisi buat icon approve--%>
+                                                             <%var r = user.role;
+
+                                                     Penjaminan.Models.PenjaminanDatasetTableAdapters.t_workflowTableAdapter ta = new Penjaminan.Models.PenjaminanDatasetTableAdapters.t_workflowTableAdapter();
+                                                    foreach (Penjaminan.Models.PenjaminanDataset.t_workflowRow drWorkflow in ((Penjaminan.Models.PenjaminanDataset.t_workflowDataTable)ta.GetDatafor(1,dr.id, int.Parse(r))).Rows)
+                                                    {
+                                                        statusWf = drWorkflow.status;
+
+                                                    }
+                                                    foreach (Penjaminan.Models.PenjaminanDataset.t_workflowRow drWorkflow in ((Penjaminan.Models.PenjaminanDataset.t_workflowDataTable)ta.GetDatafor(1, dr.id, (flag))).Rows)
+                                                    {
+                                                        if (flag == 0 || (flag == drWorkflow.urutan && drWorkflow.status == "Y"))
+                                                        {
+                                                            flag2 = "yes";
+                                                        }
+                                                    } %>
+                                                        <% if (statusWf == "N" || flag2 == "xx")   
+                                                            { %>
+                                                                     <a href="#" class="btn btn-link btn-danger   btn-just-icon like" ><i class="fa fa-eye"></i></a>
+                                                        <%  } %>
+
+                                                        <%else if (statusWf == "Y" || flag2 == "xx")
+                                                            {%>
+                                                                      <a href="#" class="btn btn-link btn-success   btn-just-icon like" ><i class="fa fa-eye"></i></a>
+                                                        <%}%>
+
+                                                        <% else if (statusWf == "0")
+                                                            {%>
+                                                                     <a href="/Penjaminan/PreviewMitra?eID=<%= dr.id %>&eType=preview" class="btn btn-link btn-primary btn-just-icon like" ><i class="fa fa-eye"></i></a>
+                                                        <%} %>                                                           
+                                                 <%} %>
+                                                 <%statusWf = "0"; flag2 = "no"; %>
+                                                <%if (user.role == "4")
+                                                    {
+                                                        %>
+                                                         <a href="/Penjaminan/EntryMitra?eID=<%= dr.id %>&eType=delete" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
+                                                 <%} %>
                                             </td>
                                         </tr>
                                         <% } %>

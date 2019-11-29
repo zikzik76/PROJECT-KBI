@@ -1,6 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EntryMitraBoardOfDirector.aspx.cs" Inherits="Penjaminan.Penjaminan.EntryMitraBoardOfDirector" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <script>
+   <style>
+        input[type=date]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            display: none;
+
+        }
+    </style>
+     <script>
         function backAdd() {
             window.location.replace(window.location.origin + '/Penjaminan/EntryMitra?eType=add');
         }
@@ -8,6 +15,15 @@
         function backEdit() {
             window.location.replace(window.location.origin + '/Penjaminan/EntryMitra?eType=edit');
         }
+        function tTglLahir() {
+            //debugger;
+            var date = new Date();
+            var field = (date.getFullYear() - 30).toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) +
+                '-' + (date.getDate() - 1).toString().padStart(2, 0);
+            document.getElementById("MainContent_txtTanggalLahir").max = field;
+            //document.getElementById("MainContent_txtTanggalSerah").max = field;
+            //document.getElementById("MainContent_txtTanggalSerah").disabled = false;
+        };
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -108,7 +124,7 @@
                                     <label class="col-sm-2 col-form-label">Tanggal Lahir</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <input type="date" class="form-control" id="txtTanggalLahir" value="" runat="server">
+                                            <input type="date" class="form-control" id="txtTanggalLahir" value="" runat="server" onclick="tTglLahir();" onkeydown="return false" required>
                                         </div>
                                     </div>
                                 </div>

@@ -4,11 +4,7 @@
        
         $("#btnDownload").click(function () {
             alert('clicked!');
-        });
-
-        $(document).ready(function () {
-            alert('loaded');
-        });
+        });       
         function hello(){
             window.location.replace(window.location.origin + '/Penjaminan/ViewMitra');
         }
@@ -295,12 +291,12 @@
                                                         <thead>
                                                             <tr>
                                                                 <th class="text-center">#</th>
-                                                                <th>Nama Pekerjaan</th>
-                                                                <th>Lokasi</th>
-                                                                <th>Tanggal Pelaksanaan</th>
-                                                                <th>Nilai</th>
-                                                                <th>Tanggal Serah</th>
-                                                                <th class="td-actions text-right" width="150px">Actions
+                                                                <th class="text-center">Nama Pekerjaan</th>
+                                                                <th class="text-center">Lokasi</th>
+                                                                <th class="text-center">Tanggal Pelaksanaan</th>
+                                                                <th class="text-center">Nilai</th>
+                                                                <th class="text-center">Tanggal Serah</th>
+                                                                <th class="td-actions text-right" >Actions
 
                                                                 <% if (Session["tWorkDoneList"] != null) { %>                                                               
                                                                 <% foreach (Penjaminan.Object.WorkDone2 wd in (List<Penjaminan.Object.WorkDone2>) Session["tWorkDoneList"]) { %>
@@ -326,11 +322,11 @@
                                                                     <% w++; %>
                                                                     <tr>
                                                                         <td class="text-center"><%= w %></td>
-                                                                        <td><%= wd.namapaket %></td>
-                                                                        <td><%= wd.lokasi %></td>
-                                                                        <td><%= wd.tanggalpelaksanaan %></td>
-                                                                        <td><%= wd.nilai %></td>
-                                                                        <td><%= wd.tanggalserah %></td>
+                                                                        <td class="text-center"><%= wd.namapaket %></td>
+                                                                        <td class="text-center"><%= wd.lokasi %></td>
+                                                                        <td class="text-center"><%= wd.tanggalpelaksanaan %></td>
+                                                                        <td class="text-center"><%= "Rp." +wd.nilai.ToString("#,##0.") +",-" %></td>
+                                                                        <td class="text-center"><%= wd.tanggalserah %></td>
                                                                         <td class="td-actions text-right">
                                                                             <button type="button" rel="tooltip" class="btn btn-success" onclick="javascript:editWorkDone(<%= wd.id %>);">
                                                                                 <i class="material-icons">edit</i>
@@ -364,12 +360,12 @@
                                                         <thead>
                                                             <tr>
                                                                 <th class="text-center">#</th>
-                                                                <th>Nama Pekerjaan</th>
-                                                                <th>Lokasi</th>
-                                                                <th>Tanggal Pelaksanaan</th>
-                                                                <th>Nilai</th>
-                                                                <th>Tanggal Serah</th>
-                                                                <th class="td-actions text-right" width="150px">Actions
+                                                                <th class="text-center">Nama Pekerjaan</th>
+                                                                <th class="text-center">Lokasi</th>
+                                                                <th class="text-center">Tanggal Pelaksanaan</th>
+                                                                <th class="text-center">Nilai</th>
+                                                                <th class="text-center">Tanggal Serah</th>
+                                                                <th class="td-actions text-right" >Actions
                                                                 <% if (Session["tWorkProgressList"] != null) { %>
                                                                 <% foreach (Penjaminan.Object.WorkProgress wp in (List<Penjaminan.Object.WorkProgress>) Session["tWorkProgressList"]) { %>
                                                                                                                                      
@@ -394,11 +390,11 @@
                                                                     <% x++; %>
                                                                     <tr>
                                                                         <td class="text-center"><%= x %></td>
-                                                                        <td><%= wd.namapaket %></td>
-                                                                        <td><%= wd.lokasi %></td>
-                                                                        <td><%= wd.tanggalpelaksanaan %></td>
-                                                                        <td><%= wd.nilai %></td>
-                                                                        <td><%= wd.tanggalserah %></td>
+                                                                        <td class="text-center"><%= wd.namapaket %></td>
+                                                                        <td class="text-center"><%= wd.lokasi %></td>
+                                                                        <td class="text-center"><%= wd.tanggalpelaksanaan %></td>
+                                                                        <td class="text-center"><%= "Rp." +wd.nilai.ToString("#,##0.") +",-" %></td>
+                                                                        <td class="text-center"><%= wd.tanggalserah %></td>
                                                                         <td class="td-actions text-right">
                                                                             <button type="button" rel="tooltip" class="btn btn-success" onclick="javascript:editWorkProgress(<%= wd.id %>);">
                                                                                 <i class="material-icons">edit</i>
@@ -431,12 +427,12 @@
                                                     <table class="table">
                                                         <thead>
                                                             <tr>
-                                                                <th class="text-center" width="20px">#</th>
+                                                                <th class="text-center">#</th>
                                                                 <th class="text-center">Name</th>
-                                                                <th class="text-center" width="150px">Jabatan</th>
-                                                                <th class="text-center" width="150px">No Telepon</th>
-                                                                <th class="text-center" width="150px">Email</th>
-                                                                <th class="td-actions text-right" width="150px">Actions
+                                                                <th class="text-center">Jabatan</th>
+                                                                <th class="text-center" >No Telepon</th>
+                                                                <th class="text-center" >Email</th>
+                                                                <th class="td-actions text-right" >Actions
                                                                 <% if (Session["tPicList"] != null) { %>
                                                                 <% foreach (Penjaminan.Object.Pic pic in (List<Penjaminan.Object.Pic>) Session["tPicList"]) { %>                                                                   
                                                                     <button type="button" rel="tooltip" class="btn btn-success" onclick="javascript:addPic(<%= pic.fk_mitra %>);">
@@ -460,10 +456,10 @@
                                                                     <% c++; %>
                                                                     <tr>
                                                                         <td class="text-center"><%= c %></td>
-                                                                        <td><%= pic.name %></td>
-                                                                        <td><%= pic.jabatan %></td>
-                                                                        <td><%= pic.noTelepon %></td>
-                                                                        <td><%= pic.email %></td>
+                                                                        <td class="text-center"><%= pic.name %></td>
+                                                                        <td class="text-center"><%= pic.jabatan %></td>
+                                                                        <td class="text-center"><%= pic.noTelepon %></td>
+                                                                        <td class="text-center"><%= pic.email %></td>
                                                                         <td class="td-actions text-right">
                                                                             <button type="button" rel="tooltip" class="btn btn-success" onclick="javascript:editPic(<%= pic.id %>);">
                                                                                 <i class="material-icons">edit</i>
@@ -496,12 +492,12 @@
                                                     <table class="table">
                                                         <thead>
                                                             <tr>
-                                                                <th class="text-center" width="20px">#</th>
+                                                                <th class="text-center" >#</th>
                                                                 <th>Name</th>
-                                                                <th class="text-center" width="250px">Jumlah Lembar Saham</th>
-                                                                <th class="text-center" width="150px">Total</th>
-                                                                <th class="text-center" width="150px">Persentase</th>
-                                                                <th class="td-actions text-right" width="150px">Actions
+                                                                <th class="text-center">Jumlah Lembar Saham</th>
+                                                                <th class="text-center">Total</th>
+                                                                <th class="text-center" >Persentase</th>
+                                                                <th class="td-actions text-right" >Actions
 
                                                                     <% if (Session["tPemegangSahamList"] != null) { %>
                                                                     <% foreach (Penjaminan.Object.PemegangSaham ps in (List<Penjaminan.Object.PemegangSaham>) Session["tPemegangSahamList"]) { %>
@@ -527,10 +523,10 @@
                                                                     <% c++; %>
                                                                     <tr>
                                                                         <td class="text-center"><%= c %></td>
-                                                                        <td><%= ps.name %></td>
-                                                                        <td><%= ps.jumlah %></td>
-                                                                        <td><%= "Rp." +ps.total.ToString("#,##0.") +",-" %></td>
-                                                                        <td><%= ps.persentase + " %" %></td>
+                                                                        <td class="text-center"><%= ps.name %></td>
+                                                                        <td class="text-center"><%= ps.jumlah %></td>
+                                                                        <td class="text-center"><%= "Rp." +ps.total.ToString("#,##0.") +",-" %></td>
+                                                                        <td class="text-center"><%= Convert.ToInt16(ps.persentase) + " %" %></td>
                                                                         <td class="td-actions text-right">
                                                                             <button type="button" rel="tooltip" class="btn btn-success" onclick="javascript:editPemegangSaham(<%= ps.id %>);">
                                                                                 <i class="material-icons">edit</i>
@@ -591,9 +587,9 @@
                                                                     <% c++; %>
                                                                     <tr>
                                                                         <td class="text-center"><%= c %></td>
-                                                                        <td><%= bod.name %></td>
-                                                                        <td><%= bod.jabatan %></td>
-                                                                        <td><%= bod.tglLahir %></td>                                                                        
+                                                                        <td class="text-center"><%= bod.name %></td>
+                                                                        <td class="text-center"><%= bod.jabatan %></td>
+                                                                        <td class="text-center"><%= bod.tglLahir %></td>                                                                        
                                                                         <td class="td-actions text-right">
                                                                             <button type="button" rel="tooltip" class="btn btn-success" onclick="javascript:editBod(<%= bod.id %>);">
                                                                                 <i class="material-icons">edit</i>
@@ -654,11 +650,11 @@
                                                                     <% c++; %>                                                                  
                                                                     <tr>
                                                                         <td class="text-center"><%= c %></td>                                                                        
-                                                                        <td><%= cek.kategoriname %></td>
-                                                                        <td><%= cek.name %></td>
+                                                                        <td class="text-center"><%= cek.kategoriname %></td>
+                                                                        <td class="text-center"><%= cek.name %></td>
                                                                          <% if (cek.fk_mitra != 0)
                                                                             { %>     
-                                                                        <td><%= cek.FileName %></td>                                                                                                                                          
+                                                                        <td class="text-center"><%= cek.FileName %></td>                                                                                                                                          
                                                                          <%} %>
                                                                         <td class="td-actions text-right">
                                                                             <asp:FileUpload  runat="server" ID="fuSample" name="fuSample" />      

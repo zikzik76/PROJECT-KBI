@@ -1,6 +1,8 @@
 ﻿using Penjaminan.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,6 +12,7 @@ namespace Penjaminan.Penjaminan
 {
     public partial class PreviewMitra : System.Web.UI.Page
     {
+        int tSquence = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UserProfile"] == null)
@@ -22,14 +25,56 @@ namespace Penjaminan.Penjaminan
                 {
                     BindPreview(eID);
                 }
-              
+                else if (eType == "download")
+                {
+                    DownloadFile(eID);
+                }
             }           
 
             lblMenu.Text = "Entry Master Mitra";
-            Session["activepage"] = "mitra";
+            Session["activepage"] = "mitra";            
+            
         }
 
-
+        protected void DownloadFile(int id)
+        {
+            byte[] bytes;
+            string fileName;
+            int tfkMitra = 0;
+            string constr = ConfigurationManager.ConnectionStrings["PenjaminanConnectionString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = "select fk_mitra, name, tipeData from m_checklist where Id=@Id";
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        sdr.Read();
+                        bytes = (byte[])sdr["tipeData"];
+                        fileName = sdr["name"].ToString();
+                        tfkMitra = Convert.ToInt32(sdr["fk_mitra"]);
+                    }
+                    con.Close();
+                }
+            }
+            Response.Clear();
+            Response.Buffer = true;
+            Response.Charset = "";
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            if (fileName != "")
+            {
+                Response.AppendHeader("Content-Disposition", "attachment; filename=" + fileName);
+                Response.BinaryWrite(bytes);
+                Response.Flush();
+                Response.End();
+            }
+            var eMaster = Request.QueryString["eTypeMaster"];
+            eMaster = "preview";
+            Response.Redirect("/Penjaminan/PreviewMitra.aspx?eID=" + tfkMitra + "&eType=" + eMaster);
+        }
         public void BindPreview(int id)
         {
             if (Session["tMitra"] == null || Session["tBidangUsahaList"] == null || Session["tWorkDoneList"] == null || Session["tWorkProgressList"] == null || Session["tPicList"] == null || Session["documentDt"] == null || Session["tPemegangSahamList"] == null || Session["tBodList"] == null)
@@ -227,14 +272,116 @@ namespace Penjaminan.Penjaminan
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            string type = "aproove";
-            if (txtCalonMitra.Value == "")
-            {
-                throw new Exception("Field Calon Mitra is Mandatory");
-            }
-            m_mitra.UpdateStatus(eID,textKeterangan.Value, type);
+            //inisiasi u/ kebuutuhan tbl t_workflow
 
-            Response.Redirect("/Penjaminan/ViewMitra.aspx");
+            var user = (PenjaminanDataset.UserProfileRow)Session["UserProfile"];
+            tSquence = Convert.ToInt32(user.role);
+            int tModeule = eID;
+            string Module = "mitra";
+            int tMwf = 0;
+            int tUrutan1 = 0;
+            int tUrutan2 = 0;
+            //buat validasi
+            if (tSquence != 1)
+            {
+                tUrutan1 = tSquence - 1;
+                Models.PenjaminanDatasetTableAdapters.m_workflowTableAdapter taVal1 = new Models.PenjaminanDatasetTableAdapters.m_workflowTableAdapter();
+                PenjaminanDataset.m_workflowDataTable dtVal1 = taVal1.GetDataTwf(tUrutan1, Module);
+                PenjaminanDataset.m_workflowDataTable dtModule = taVal1.GetDataModule(Module);
+                
+                foreach (PenjaminanDataset.m_workflowRow drX in taVal1.GetDataModule(Module))
+                {
+                    var pembanding = drX.sequence - 1;
+                   
+                    //get data buat validasi jancuk
+                    if(pembanding == tUrutan1)
+                    {
+                        Models.PenjaminanDatasetTableAdapters.t_workflowTableAdapter taVal2 = new Models.PenjaminanDatasetTableAdapters.t_workflowTableAdapter();
+                        PenjaminanDataset.t_workflowDataTable dtVal2 = taVal2.GetDataValidasi(1, drX.sequence - 1, eID);
+                        if (dtVal2.Count > 0)
+                        {
+                            tMwf = dtVal1[0].idModule;
+
+                            Models.PenjaminanDatasetTableAdapters.t_workflowTableAdapter ta = new Models.PenjaminanDatasetTableAdapters.t_workflowTableAdapter();
+                            PenjaminanDataset.t_workflowDataTable dtWF = ta.GetDataByforUpdateStatusMitra(tMwf, eID);
+
+                            ta.Insert(tMwf, tModeule, drX.sequence,tSquence, "Y", textKeterangan.Value, user.id.ToString(), DateTime.Now,null, null, "0");
+
+                            PenjaminanDataset.t_workflowDataTable dtWF2 = ta.GetDataByforUpdateStatusMitra(tMwf, eID);
+                            string type = "aproove";
+                            if (txtCalonMitra.Value == "")
+                            {
+                                throw new Exception("Field Calon Mitra is Mandatory");
+                            }
+                            //buat validasi apakah dia sudah terapprove semua atau tidak
+                            if(dtModule.Count == dtWF2.Count)
+                            {
+                                m_mitra.UpdateStatus(eID, textKeterangan.Value, type);
+                            }
+                            Response.Redirect("/Penjaminan/ViewMitra.aspx");
+                        }
+                        else
+                        {
+                            string message = "Tidak Bisa Approve, karena level " + tUrutan1 + " Belum Approve!";
+                            //ClientScript.RegisterStartupScript(this.GetType(), "Alert", "alert('" + message + "');", true);
+                            Response.Write("<script>alert('"+ message +"');window.location = '/Penjaminan/ViewMitra.aspx';</script>");
+                           
+                            //Response.Redirect("/Penjaminan/ViewMitra.aspx");
+                        }
+                    }
+                    
+                }
+            }
+            else
+            {
+                Models.PenjaminanDatasetTableAdapters.m_workflowTableAdapter taVal1 = new Models.PenjaminanDatasetTableAdapters.m_workflowTableAdapter();
+                PenjaminanDataset.m_workflowDataTable dtVal1 = taVal1.GetDataTwf(tSquence, Module);
+                if (dtVal1.Count > 0)
+                {
+                    tMwf = dtVal1[0].id;
+
+                    Models.PenjaminanDatasetTableAdapters.t_workflowTableAdapter ta = new Models.PenjaminanDatasetTableAdapters.t_workflowTableAdapter();
+
+                    ta.Insert(tMwf, tModeule, tSquence, tSquence, "Y", textKeterangan.Value, user.id.ToString(), DateTime.Now,null, null, "0");
+
+                    string type = "aproove";
+                    if (txtCalonMitra.Value == "")
+                    {
+                        throw new Exception("Field Calon Mitra is Mandatory");
+                    }
+                    m_mitra.UpdateStatus(eID, textKeterangan.Value, type);
+
+                    Response.Redirect("/Penjaminan/ViewMitra.aspx");
+                }
+            }
+            ////buat dapetin fk_m_workflow
+            //Models.PenjaminanDatasetTableAdapters.m_workflowTableAdapter tax = new Models.PenjaminanDatasetTableAdapters.m_workflowTableAdapter();
+            //PenjaminanDataset.m_workflowDataTable dtX = tax.GetDataTwf(tSquence, Module);
+            //if(dtX.Count > 0)
+            //{
+            //    tMwf = dtX[0].id;
+            //}
+
+            
+            //Models.PenjaminanDatasetTableAdapters.t_workflowTableAdapter ta = new Models.PenjaminanDatasetTableAdapters.t_workflowTableAdapter();
+
+            //ta.Insert(tMwf, tModeule, tSquence, "Y", textKeterangan.Value, user.id.ToString(), DateTime.Now, null, "0");
+
+            //////buat validasi
+            ////PenjaminanDataset.t_workflowDataTable dt = ta.GetDataforAction(tMwf, eID);
+            ////if(dt.Count > 0)
+            ////{
+            ////    ta.Insert(tMwf, tModeule, tSquence, "Y", textKeterangan.Value, user.id.ToString(), DateTime.Now,null,"0");
+            ////}
+
+            //string type = "aproove";
+            //if (txtCalonMitra.Value == "")
+            //{
+            //    throw new Exception("Field Calon Mitra is Mandatory");
+            //}
+            //m_mitra.UpdateStatus(eID,textKeterangan.Value, type);
+
+            
         }
 
         protected void btnReject_Click(object sender, EventArgs e)

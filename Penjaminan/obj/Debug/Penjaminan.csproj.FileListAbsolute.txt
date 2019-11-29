@@ -213,7 +213,6 @@ D:\project\Penjaminan\bin\Penjaminan.dll
 D:\project\Penjaminan\bin\Penjaminan.pdb
 D:\project\Penjaminan\bin\Antlr3.Runtime.dll
 D:\project\Penjaminan\bin\AspNet.ScriptManager.bootstrap.dll
-D:\project\Penjaminan\bin\AspNet.ScriptManager.jQuery.dll
 D:\project\Penjaminan\bin\EntityFramework.dll
 D:\project\Penjaminan\bin\EntityFramework.SqlServer.dll
 D:\project\Penjaminan\bin\Microsoft.AspNet.FriendlyUrls.dll
@@ -262,3 +261,4 @@ D:\project\Penjaminan\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\project\Penjaminan\bin\Microsoft.Owin.Security.OAuth.xml
 D:\project\Penjaminan\obj\Debug\Penjaminan.dll
 D:\project\Penjaminan\obj\Debug\Penjaminan.pdb
+D:\project\Penjaminan\obj\Debug\Penjaminan.csprojResolveAssemblyReference.cache

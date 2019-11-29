@@ -64,6 +64,7 @@ namespace Penjaminan.Master
                 }
                 else if (eID == 0 && IsValidEntry())
                 {
+
                     u_role.InsertData(txtName.Value, txtDescription.Value);
                 }
                 Response.Redirect("/Master/ViewRole.aspx");

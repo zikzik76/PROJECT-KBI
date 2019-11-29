@@ -1,12 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EntryMitraPemegangSaham.aspx.cs" Inherits="Penjaminan.Penjaminan.EntryMitraPemegangSaham" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <script>
-        $(document).ready(function () {
-
-            // Format mata uang.           
-            $('.duit').mask('000.000.000', { reverse: true });
-            
-        });
+        
         function backAdd() {
             window.location.replace(window.location.origin + '/Penjaminan/EntryMitra?eType=add');
         }
@@ -16,6 +11,51 @@
         }
         
     </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //Validasi untuk format Rupiah
+            $("input[data-type='currency']").on({
+                keyup: function () {
+                    formatCurrency($(this));
+                },
+                blur: function () {
+                    formatCurrency($(this), "blur");
+                }
+            });
+            function formatNumber(n) {
+                return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+                debugger;
+            }
+
+            function formatCurrency(input, blur) {
+                debugger;
+                var input_val = input.val();
+
+                if (input_val === "") { return; }
+
+                var original_len = input_val.length;
+
+                if (input_val.indexOf(".") >= 0) {
+
+                    var decimal_pos = input_val.indexOf(".");
+
+                    var left_side = input_val.substring(0, decimal_pos);
+                    var right_side = input_val.substring(decimal_pos);
+
+                    left_side = formatNumber(left_side);
+
+                    right_side = formatNumber(right_side);
+
+                    input_val = "Rp" + left_side + ". " + right_side;
+                } else {
+                    input_val = formatNumber(input_val);
+                    input_val = "Rp. " + input_val;
+                }
+
+                input.val(input_val);
+            }
+        });
+        </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
@@ -99,7 +139,7 @@
                                     <label class="col-sm-2 col-form-label">Nama</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="txtName" value="" runat="server">
+                                            <input type="text" class="form-control" id="txtName" value="" runat="server" required>
                                         </div>
                                     </div>
                                 </div>
@@ -107,7 +147,7 @@
                                     <label class="col-sm-2 col-form-label">Jumlah Lembar Saham</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" id="txtJumlahSaham" value="" runat="server">
+                                            <input type="number" class="form-control" id="txtJumlahSaham" value="" runat="server" required>
                                         </div>
                                     </div>
                                 </div>
@@ -115,7 +155,7 @@
                                     <label class="col-sm-2 col-form-label">Total</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <input type="text" class="duit form-control" id="txtTotal" value="" runat="server">
+                                            <input type="text" class="form-control" id="txtTotal" value="" runat="server" data-type="currency" required>
                                         </div>
                                     </div>
                                 </div>
@@ -124,15 +164,15 @@
                                     <div class="col-sm-10">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="txtPersentase" value="" runat="server">
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtPersentase"
-                                                        ErrorMessage="Required" ForeColor="Red" Display="Dynamic" ValidationGroup="Insert"></asp:RequiredFieldValidator>
+                                            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtPersentase"
+                                                        ErrorMessage="Required" ForeColor="Red" Display="Dynamic" ValidationGroup="Insert"></asp:RequiredFieldValidator>--%>
                                                     <!-- Your Regular Expression Validator -->
-                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
+                                                   <%-- <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
                                                         ControlToValidate="txtPersentase" ValidationGroup="Insert" ForeColor="Red"
                                                         runat="server" Display="Dynamic"
                                                         ErrorMessage="'Premium' must be decimal"
                                                         ValidationExpression="^\d+([,\.]\d{1,2})?$">
-                                            </asp:RegularExpressionValidator>
+                                            </asp:RegularExpressionValidator>--%>
                                         </div>
                                     </div>
                                 </div>                                                                

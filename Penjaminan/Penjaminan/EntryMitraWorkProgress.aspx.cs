@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -40,10 +41,11 @@ namespace Penjaminan.Penjaminan
             {
                 Object.WorkProgress wp = wpList.Find(x => x.id == id);
 
+                txtId.Value = wp.id.ToString();
                 txtName.Value = wp.namapaket;
                 txtLokasi.Value = wp.lokasi;
                 txtTanggalPelaksanaan.Value = wp.tanggalpelaksanaan.ToString("yyyy-MM-dd");
-                txtNilai.Value = wp.nilai.ToString();
+                txtNilai.Value = (Convert.ToInt64(wp.nilai)).ToString();
                 txtTanggalSerah.Value = wp.tanggalserah.ToString("yyyy-MM-dd");
             }
         }
@@ -64,7 +66,7 @@ namespace Penjaminan.Penjaminan
         {
             int tFkMitra = 0;
             tFkMitra = eID;
-
+            long nilaiAkhir = long.Parse(Regex.Replace(txtNilai.Value, "[^0-9]+", string.Empty));
             List<Object.WorkProgress> wpList = new List<Object.WorkProgress>();
             Object.WorkProgress wp = new Object.WorkProgress();
 
@@ -76,7 +78,7 @@ namespace Penjaminan.Penjaminan
             wp.namapaket = txtName.Value;
             wp.lokasi = txtLokasi.Value;
             wp.tanggalpelaksanaan = DateTime.Parse(txtTanggalPelaksanaan.Value);
-            wp.nilai = decimal.Parse(txtNilai.Value);
+            wp.nilai = nilaiAkhir;
             wp.tanggalserah = DateTime.Parse(txtTanggalSerah.Value);
 
 
@@ -92,12 +94,13 @@ namespace Penjaminan.Penjaminan
                 List<Object.WorkProgress> wdList = (List<Object.WorkProgress>)Session["tWorkProgressList"];
                 Object.WorkProgress wd = wdList.Find(y => y.id == eID);
 
-                //wd.id = int.Parse(txtId.Value);
+                wd.id = int.Parse(txtId.Value);
                 wd.namapaket = txtName.Value;
                 wd.lokasi = txtLokasi.Value;
                 wd.tanggalpelaksanaan = Convert.ToDateTime(txtTanggalPelaksanaan.Value);
-                wd.nilai = int.Parse(txtNilai.Value);
+                wd.nilai = nilaiAkhir;
                 wd.tanggalserah = Convert.ToDateTime(txtTanggalSerah.Value);
+                tFkMitra = wd.fk_mitra;
             }
 
             Session.Remove("tWorkProgressList");

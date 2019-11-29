@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -64,7 +65,7 @@ namespace Penjaminan.Penjaminan
         {
             int tFkMitra = 0;
             tFkMitra = eID;
-
+            long nilaiTotal = long.Parse(Regex.Replace(txtTotal.Value, "[^0-9]+", string.Empty));
             List<Object.PemegangSaham> psList = new List<Object.PemegangSaham>();
             Object.PemegangSaham ps = new Object.PemegangSaham();
 
@@ -76,7 +77,7 @@ namespace Penjaminan.Penjaminan
             ps.fk_mitra = 0;
             ps.name = txtName.Value;
             ps.jumlah = decimal.Parse(txtJumlahSaham.Value);
-            ps.total = decimal.Parse(txtTotal.Value);
+            ps.total = nilaiTotal;
             ps.persentase = decimal.Parse(txtPersentase.Value);
 
             if(eType == "add")
@@ -92,7 +93,7 @@ namespace Penjaminan.Penjaminan
 
                 psOld.name = txtName.Value;
                 psOld.jumlah = decimal.Parse(txtJumlahSaham.Value);
-                psOld.total = decimal.Parse(txtTotal.Value);
+                psOld.total = nilaiTotal;
                 psOld.persentase = decimal.Parse(txtPersentase.Value);
                 tFkMitra = psOld.fk_mitra;
             }

@@ -1,5 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EntryMitraWorkDone.aspx.cs" Inherits="Penjaminan.Penjaminan.EntryMitraWorkDone"  EnableViewState="true"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style>
+        input[type=date]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            display: none;
+
+        }
+    </style>
     <script>
         function backAdd() {
             window.location.replace(window.location.origin + '/Penjaminan/EntryMitra?eType=add');
@@ -7,11 +14,67 @@
 
         function backEdit() {
             window.location.replace(window.location.origin + '/Penjaminan/EntryMitra?eType=edit');
+        }        
+        function tTglPelaksanaan() {
+            //debugger;
+            var date = new Date();
+            var field = date.getFullYear().toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) +
+                '-' + (date.getDate() - 1).toString().padStart(2, 0);
+            document.getElementById("MainContent_txtTanggalPelaksanaan").max = field;
+            document.getElementById("MainContent_txtTanggalSerah").max = field;
+            document.getElementById("MainContent_txtTanggalSerah").disabled = false;
+        };
+        function tTglSerah() {
+            //debugger;
+            var date2 = document.getElementById("MainContent_txtTanggalPelaksanaan").value;
+            document.getElementById("MainContent_txtTanggalSerah").min = date2;
         }
-        $(document).ready(function () {
-            $('.datepicker-field').datepicker();
-        });
     </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //Validasi untuk format Rupiah
+            $("input[data-type='currency']").on({
+                keyup: function () {
+                    formatCurrency($(this));
+                },
+                blur: function () {
+                    formatCurrency($(this), "blur");
+                }
+            });
+            function formatNumber(n) {
+                return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+                debugger;
+            }
+
+            function formatCurrency(input, blur) {
+                debugger;
+                var input_val = input.val();
+
+                if (input_val === "") { return; }
+
+                var original_len = input_val.length;
+
+                if (input_val.indexOf(".") >= 0) {
+
+                    var decimal_pos = input_val.indexOf(".");
+
+                    var left_side = input_val.substring(0, decimal_pos);
+                    var right_side = input_val.substring(decimal_pos);
+
+                    left_side = formatNumber(left_side);
+
+                    right_side = formatNumber(right_side);
+
+                    input_val = "Rp" + left_side + ". " + right_side;
+                } else {
+                    input_val = formatNumber(input_val);
+                    input_val = "Rp. " + input_val;
+                }
+
+                input.val(input_val);
+            }
+        });
+        </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
@@ -111,7 +174,7 @@
                                     <label class="col-sm-2 col-form-label">Tanggal Pelaksanaan</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <input type="date" class="form-control col-sm-4" id="txtTanggalPelaksanaan" value="" runat="server">
+                                            <input type="date" class="form-control col-sm-4" id="txtTanggalPelaksanaan" value="" runat="server" onclick="tTglPelaksanaan();" onkeydown="return false" required>
                                            <%-- <asp:textbox id="startDate" runat="server" cssclass="datepicker-field"/>--%>
                                         </div>
                                     </div>
@@ -120,7 +183,7 @@
                                     <label class="col-sm-2 col-form-label">Nilai</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <input type="text" class="form-control col-sm-4" id="txtNilai" runat="server">
+                                            <input type="text" class="form-control col-sm-4" id="txtNilai" runat="server" data-type="currency" required>
                                         </div>
                                     </div>
                                 </div>
@@ -128,7 +191,7 @@
                                     <label class="col-sm-2 col-form-label">Tanggal Serah</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <input type="date" class="form-control col-sm-4" id="txtTanggalSerah" value="" runat="server">
+                                            <input type="date" class="form-control col-sm-4" id="txtTanggalSerah" value="" runat="server" onclick="tTglSerah();" onkeydown="return false" disabled required>
                                          
                                          <%--  <asp:TextBox ID="tglSerah" runat="server" CssClass="bootstrap-datetimepicker-widget"></asp:TextBox>--%>
                                         </div>

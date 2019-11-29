@@ -417,6 +417,7 @@ namespace Penjaminan.Penjaminan
                                 var kukuk = fuSample.FileName;
                                 string FileName = "";
                                 var kukuruyuk = fuSample.PostedFiles[c].FileName;
+
                                 if (fuSample.HasFile)
                                 {
                                     HttpPostedFile file = fuSample.PostedFile;
@@ -426,6 +427,10 @@ namespace Penjaminan.Penjaminan
                                     FileName = file.FileName;
 
                                     ta.InsertQuery(tMitraID, data.id, kukuruyuk, data.kategoriname, 1, DateTime.Now, 1, DateTime.Now, "0", Size, dataType);
+                                }
+                                else
+                                {
+                                    ta.InsertQuery(tMitraID, c + 1, kukuruyuk, data.kategoriname, 1, DateTime.Now, 1, DateTime.Now, "0", Size, dataType);
                                 }
                                 c++;
                             }

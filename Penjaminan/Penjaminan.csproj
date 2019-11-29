@@ -43,10 +43,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AspNet.ScriptManager.jQuery, Version=3.4.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -189,22 +185,26 @@
     <Content Include="Account\Web.config" />
     <Content Include="kbi.ico" />
     <Content Include="Master\ConfirmMessage.aspx" />
+    <Content Include="Master\EntryAccess.aspx" />
     <Content Include="Master\EntryBidangUsaha.aspx" />
     <Content Include="Master\EntryDivisi.aspx" />
     <Content Include="Master\EntryDocument.aspx" />
     <Content Include="Master\EntryKaryawan.aspx" />
     <Content Include="Master\EntryKategori.aspx" />
+    <Content Include="Master\EntryPage.aspx" />
     <Content Include="Master\EntryRole.aspx" />
     <Content Include="Master\EntryPerusahaan.aspx" />
     <Content Include="Master\EntryPipeline.aspx" />
     <Content Include="Master\EntryProduct.aspx" />
     <Content Include="Master\EntryUser.aspx" />
     <Content Include="Master\EntryWorkflow.aspx" />
+    <Content Include="Master\ViewAccess.aspx" />
     <Content Include="Master\ViewBidangUsaha.aspx" />
     <Content Include="Master\ViewDivisi.aspx" />
     <Content Include="Master\ViewDocument.aspx" />
     <Content Include="Master\ViewKaryawan.aspx" />
     <Content Include="Master\ViewKategori.aspx" />
+    <Content Include="Master\ViewPage.aspx" />
     <Content Include="Master\ViewRole.aspx" />
     <Content Include="Master\ViewPerusahaan.aspx" />
     <Content Include="Master\ViewPipeline.aspx" />
@@ -322,9 +322,6 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
-    <Content Include="Scripts\jquery.moneymask.js" />
     <Content Include="Scripts\ViewMitra.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -655,7 +652,6 @@
     <Content Include="Scripts\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Scripts\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Scripts\vendor\bootstrap\css\bootstrap.min.css.map" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -779,7 +775,6 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\IdentityConfig.cs" />
-    <Compile Include="App_Start\MoneyMaskBundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Contact.aspx.cs">
@@ -812,6 +807,13 @@
     </Compile>
     <Compile Include="Master\ConfirmMessage.aspx.designer.cs">
       <DependentUpon>ConfirmMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\EntryAccess.aspx.cs">
+      <DependentUpon>EntryAccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\EntryAccess.aspx.designer.cs">
+      <DependentUpon>EntryAccess.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master\EntryBidangUsaha.aspx.cs">
       <DependentUpon>EntryBidangUsaha.aspx</DependentUpon>
@@ -847,6 +849,13 @@
     </Compile>
     <Compile Include="Master\EntryKategori.aspx.designer.cs">
       <DependentUpon>EntryKategori.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\EntryPage.aspx.cs">
+      <DependentUpon>EntryPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\EntryPage.aspx.designer.cs">
+      <DependentUpon>EntryPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master\EntryRole.aspx.cs">
       <DependentUpon>EntryRole.aspx</DependentUpon>
@@ -890,6 +899,13 @@
     <Compile Include="Master\EntryWorkflow.aspx.designer.cs">
       <DependentUpon>EntryWorkflow.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Master\ViewAccess.aspx.cs">
+      <DependentUpon>ViewAccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\ViewAccess.aspx.designer.cs">
+      <DependentUpon>ViewAccess.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Master\ViewBidangUsaha.aspx.cs">
       <DependentUpon>ViewBidangUsaha.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -924,6 +940,13 @@
     </Compile>
     <Compile Include="Master\ViewKategori.aspx.designer.cs">
       <DependentUpon>ViewKategori.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\ViewPage.aspx.cs">
+      <DependentUpon>ViewPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\ViewPage.aspx.designer.cs">
+      <DependentUpon>ViewPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master\ViewRole.aspx.cs">
       <DependentUpon>ViewRole.aspx</DependentUpon>
@@ -967,6 +990,7 @@
     <Compile Include="Master\ViewWorkflow.aspx.designer.cs">
       <DependentUpon>ViewWorkflow.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Access.cs" />
     <Compile Include="Models\ApplicationLog.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Karyawan.cs" />
@@ -996,6 +1020,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PenjaminanViewDataset.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Models\tPage.cs" />
     <Compile Include="Models\t_approval.cs" />
     <Compile Include="Models\t_bidangusaha.cs" />
     <Compile Include="Models\t_execsummary.cs" />

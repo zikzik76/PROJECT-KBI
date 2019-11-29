@@ -10,8 +10,9 @@ namespace Penjaminan.Master
 {
     public partial class EntryUser : System.Web.UI.Page
     {
-        int tDivisiID = 0;
+        int tDivisiID = 0;       
         int tRoleID = 0;
+ 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UserProfile"] == null)
@@ -35,7 +36,7 @@ namespace Penjaminan.Master
             }
 
             lblMenu.Text = "Entry Master User";
-            Session["activepage"] = "user";
+            Session["activepage"] = "user";         
 
             if (!Page.IsPostBack)
             {
@@ -113,6 +114,7 @@ namespace Penjaminan.Master
                 }
                 else if(eID == 0 && IsValidEntry())
                 {
+
                     UserProfile.InsertData(txtUsername.Value, txtPassword.Value, Convert.ToInt16(RoleList.SelectedValue), Convert.ToInt16(DropDownList1.SelectedValue));
                 }
                 Response.Redirect("/Master/ViewUser.aspx");

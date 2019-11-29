@@ -34,9 +34,33 @@ namespace Penjaminan.Penjaminan
 
         private void BindData()
         {
+            string tModule = "mitra";
+            int tUrutan = 0;
+            int tSequen = 0;
+            var user = (PenjaminanDataset.UserProfileRow)Session["UserProfile"];
+            tUrutan = Convert.ToInt32(user.role);
+            if(tUrutan - 1 != 0)
+            {
+                tSequen = tUrutan - 1;
+            }
+            else
+            {
+                tSequen = tUrutan;
+            }
+
             Models.PenjaminanDatasetTableAdapters.m_mitraTableAdapter ta = new Models.PenjaminanDatasetTableAdapters.m_mitraTableAdapter();
 
+            ////set condition
+            //Models.PenjaminanDatasetTableAdapters.m_workflowTableAdapter tax = new Models.PenjaminanDatasetTableAdapters.m_workflowTableAdapter();
+            //Models.PenjaminanDatasetTableAdapters.t_workflowTableAdapter taY = new Models.PenjaminanDatasetTableAdapters.t_workflowTableAdapter();
+
+            //PenjaminanDataset.m_workflowDataTable dtX = tax.GetDataTwf(tSequen, tModule);
+            
+            
             Session["mitraDt"] = (PenjaminanDataset.m_mitraDataTable)ta.GetDataFLoad();
+           
+
+           
             //foreach(PenjaminanDataset.m_mitraRow dr in ((PenjaminanDataset.m_mitraDataTable)Session["mitraDT"]).Rows)
             //{
             //    var status = dr.statusMitra;

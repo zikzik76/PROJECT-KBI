@@ -15,10 +15,11 @@
     <link href="/Scripts/css/material-dashboard.min.css?v=2.1.0" rel="stylesheet" />
     <link href="/Scripts/demo/demo.css" rel="stylesheet" />
     <link href="~/kbi.ico" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet" href="sweetalert2.min.css">
+    <script src="/Scripts/jquery-3.4.1.min.js"></script>
+    <%--<link rel="stylesheet" href="sweetalert2.min.css">--%>
     <link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/redmond/jquery-ui.css" />
     <asp:ContentPlaceHolder ID="HeadContent"  runat="server"></asp:ContentPlaceHolder>
-    <script src="/Scripts/jquery-3.4.1.min.js"></script>
+    
 </head>
 <body class="">
   <div class="wrapper ">
@@ -29,207 +30,43 @@
         </a>
       </div>
       <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li class="nav-item <%= Session["activepage"].ToString() == "dashboard" ? "active" : ""%>">
-            <a class="nav-link" href="/dashboard">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#menuMaster">
-              <i class="material-icons">person</i>
-              <p>Master Management<b class="caret"></b></p>
-            </a>
-            <div class="collapse" id="menuMaster">
-              <ul class="nav">
-                <li class="nav-item <%= Session["activepage"].ToString() == "user" ? "active" : ""%>">
-                  <a class="nav-link" href="/Master/ViewUser">
-                    <i class="material-icons">person</i>
-                    <p>User Profile</p>
-                  </a>
-                </li>
-                  <li class="nav-item <%= Session["activepage"].ToString() == "role" ? "active" : ""%>">
-                  <a class="nav-link" href="/Master/ViewRole">
-                    <i class="material-icons">library_books</i>
-                    <p>Role</p>
-                  </a>
-                </li>
-                <li class="nav-item> <%= Session["activepage"].ToString() == "bidangusaha" ? "active" : ""%>">
-                  <a class="nav-link" href="/Master/ViewBidangUsaha">
-                    <i class="material-icons">content_paste</i>
-                    <p>Bidang Usaha</p>
-                  </a>
-                </li>
-                <li class="nav-item> <%= Session["activepage"].ToString() == "karyawan" ? "active" : ""%>">
-                  <a class="nav-link" href="/Master/ViewKaryawan">
-                    <i class="material-icons">content_paste</i>
-                    <p>Karyawan</p>
-                  </a>
-                </li>
-                <li class="nav-item> <%= Session["activepage"].ToString() == "divisi" ? "active" : ""%>">
-                  <a class="nav-link" href="/Master/ViewDivisi">
-                    <i class="material-icons">content_paste</i>
-                    <p>Divisi</p>
-                  </a>
-                </li>
-                <!--
-                <li class="nav-item <?php if($activepage == 'bod') { ?> active <?php } ?>">
-                  <a class="nav-link" href="/bod">
-                    <i class="material-icons">library_books</i>
-                    <p>BOD</p>
-                  </a>
-                </li>
-                <li class="nav-item <?php if($activepage == 'checklist') { ?> active <?php } ?>">
-                  <a class="nav-link" href="/checklist">
-                    <i class="material-icons">location_ons</i>
-                    <p>Checklist</p>
-                  </a>
-                </li>
-                -->
-                <li class="nav-item <%= Session["activepage"].ToString() == "document" ? "active" : ""%>">
-                  <a class="nav-link" href="/Master/ViewDocument">
-                    <i class="material-icons">bubble_chart</i>
-                    <p>Document</p>
-                  </a>
-                </li> 
-                <!--
-                <li class="nav-item <%= Session["activepage"].ToString() == "jaminan" ? "active" : ""%>">
-                  <a class="nav-link" href="/Master/ViewJaminan">
-                    <i class="material-icons">notifications</i>
-                    <p>Jaminan</p>
-                  </a>
-                </li>
-                <li class="nav-item <%= Session["activepage"].ToString() == "productchecklist" ? "active" : ""%>">
-                  <a class="nav-link" href="/Master/ViewProductChecklist">
-                    <i class="material-icons">person</i>
-                    <p>Product Checklist</p>
-                  </a>
-                </li>
-                <li class="nav-item <?php if($activepage == 'pemegangsaham') { ?> active <?php } ?>">
-                  <a class="nav-link" href="/ViewPemegangSaham">
-                    <i class="material-icons">content_paste</i>
-                    <p>Pemegang Saham</p>
-                  </a>
-                </li>
-                -->
-                <li class="nav-item <%= Session["activepage"].ToString() == "perusahaan" ? "active" : ""%>">
-                  <a class="nav-link" href="/Master/ViewPerusahaan">
-                    <i class="material-icons">library_books</i>
-                    <p>Perusahaan</p>
-                  </a>
-                </li>
-                <!--
-                <li class="nav-item <?php if($activepage == 'pic') { ?> active <?php } ?>">
-                  <a class="nav-link" href="/pic">
-                    <i class="material-icons">location_ons</i>
-                    <p>PIC</p>
-                  </a>
-                </li>
-                -->
-                <li class="nav-item <%= Session["activepage"].ToString() == "pipeline" ? "active" : ""%>">
-                  <a class="nav-link" href="/Master/ViewPipeline">
-                    <i class="material-icons">bubble_chart</i>
-                    <p>Pipeline</p>
-                  </a>
-                </li> 
-                <li class="nav-item <%= Session["activepage"].ToString() == "product" ? "active" : ""%>">
-                  <a class="nav-link" href="/Master/ViewProduct">
-                    <i class="material-icons">notifications</i>
-                    <p>Product</p>
-                  </a>
-                </li>
-                <li class="nav-item <%= Session["activepage"].ToString() == "workflow" ? "active" : ""%>">
-                  <a class="nav-link" href="/Master/ViewWorkflow">
-                    <i class="material-icons">language</i>
-                    <p>Workflow</p>
-                  </a>
-                </li>
-                <li class="nav-item <%= Session["activepage"].ToString() == "kategori" ? "active" : ""%>">
-                  <a class="nav-link" href="/Master/ViewKategori">
-                    <i class="material-icons">person</i>
-                    <p>Kategori</p>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#menuPenjaminan">
-              <i class="material-icons">content_paste</i>
-              <p>Pengajuan Penjaminan<b class="caret"></b></p>
-            </a>
-            <div class="collapse" id="menuPenjaminan">
-              <ul class="nav">
-                <li class="nav-item <%= Session["activepage"].ToString() == "mitra" ? "active" : ""%>">
-                  <a class="nav-link" href="/Penjaminan/ViewMitra">
-                    <i class="material-icons">language</i>
-                    <p>Mitra</p>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          
-         <% var dr = (Penjaminan.Models.PenjaminanDataset.UserProfileRow)Session["UserProfile"]; %>
-            
-             <% if (dr.role == "3")
-                 {%>
-                    <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#menuPenjaminanDirektor">
-                      <i class="material-icons">content_paste</i>
-                      <p>Action Penjaminan<b class="caret"></b></p>
-                    </a>
-                    <div class="collapse" id="menuPenjaminanDirektor">
-                      <ul class="nav">
-                        <li class="nav-item <%= Session["activepage"].ToString() == "mitra" ? "active" : ""%>">
-                          <a class="nav-link" href="/Penjaminan/ViewMitra">
-                            <i class="material-icons">language</i>
-                            <p>Mitra Direktur</p>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-            <%} %>                  
-
-           
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#menuPencairan">
-              <i class="material-icons">library_books</i>
-              <p>Pencairan<b class="caret"></b></p>
-            </a>
-            <div class="collapse" id="menuPencairan">
-              <ul class="nav">
-                <li class="nav-item <%= Session["activepage"].ToString() == "pencairan" ? "active" : ""%>">
-                  <a class="nav-link" href="/Pencairan/ViewMonitoring">
-                    <i class="material-icons">language</i>
-                    <p>Pencairan</p>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" data-toggle="collapse" href="#menuMonitoring">
-              <i class="material-icons">location_ons</i>
-              <p>Monitoring<b class="caret"></b></p>
-            </a>
-            <div class="collapse" id="menuMonitoring">
-              <ul class="nav">
-                <li class="nav-item <%= Session["activepage"].ToString() == "monitoring" ? "active" : ""%>">
-                  <a class="nav-link" href="/Monitoring/ViewEarlyWarning">
-                    <i class="material-icons">language</i>
-                    <p>Monitoring</p>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>   
-        </ul>
+         <% var roleLogin = (Penjaminan.Models.PenjaminanDataset.UserProfileRow)Session["UserProfile"]; %>
+          <% Penjaminan.Models.PenjaminanViewDatasetTableAdapters.SitePageTableAdapter ta = new Penjaminan.Models.PenjaminanViewDatasetTableAdapters.SitePageTableAdapter(); %>
+         <%foreach (Penjaminan.Models.PenjaminanViewDataset.SitePageRow drX in ta.GetDataRoleLogin(Convert.ToInt32(roleLogin.role))){%>                
+          <ul class="nav">                  
+           <li class="nav-item">  
+               <% if (drX.id == drX.menuparent)
+                   {%>                        
+                        <a class="nav-link" data-toggle="collapse" href="#<%= drX.control %>">
+                          <i class="material-icons"><%= drX.icon %></i>
+                          <p><%= drX.name %><b class="caret"></b></p>
+                        </a>
+                         <% if (drX.id == drX.menuparent)
+                            {%>                           
+                                    <div class="collapse show" id="<%= drX.control %>">   
+                                         <%foreach (Penjaminan.Models.PenjaminanViewDataset.SitePageRow drY in ta.GetDataSubMenu(drX.menuparent, Convert.ToInt32(roleLogin.role))){%>           
+                                        <ul class="nav">                
+                                            <li class="nav-item <%= Session["activepage"].ToString() == drY.active ? "active" : ""%>">
+                                                <a class="nav-link" href="<%= drY.control %>">
+                                                    <i class="material-icons"><%= drY.icon %></i>
+                                                        <p><%= drY.name %></p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                         <%} %>
+                                    </div>              
+                                 
+                            
+                         <%} %>
+                    </li>
+               </ul>
+               <%} %>             
+                <%} %>
       </div>
     </div>
-    <div class="main-panel">
+    
+    
+        <div class="main-panel">
       <asp:ContentPlaceHolder ID="MainContent"  runat="server"></asp:ContentPlaceHolder>
       <footer class="footer">
       <div class="container-fluid">
@@ -251,9 +88,7 @@
       </footer>
     </div>
   </div>
-  <!--   Core JS Files   -->
-  <script src="Scripts/jquery-3.4.1.js"></script> 
-  <script src="Scripts/jquery-3.4.1.min.js"></script> 
+  <!--   Core JS Files   -->  
   <script src="/Scripts/js/core/jquery.min.js"></script>
   <script src="/Scripts/js/core/popper.min.js"></script>
   <script src="/Scripts/js/core/bootstrap-material-design.min.js"></script>
@@ -278,10 +113,10 @@
   <script src="/Scripts/js/plugins/bootstrap-notify.js"></script>
   <script src="/Scripts/js/material-dashboard.min.js?v=2.1.0" type="text/javascript"></script>
   <script src="/Scripts/demo/demo.js"></script>
-  <script src="sweetalert2.all.min.js"></script>
+  <%--<script src="sweetalert2.all.min.js"></script>--%>
         <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
-  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-  <script src="sweetalert2.min.js"></script>
+  <%--<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>--%>
+  <%--<script src="sweetalert2.min.js"></script>--%>
   <script>
     $(document).ready(function() {
       $().ready(function() {

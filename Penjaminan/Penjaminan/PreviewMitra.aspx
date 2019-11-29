@@ -2,18 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <script>
        
-        $("#btnDownload").click(function () {
-            alert('clicked!');
-        });
-
-        $(document).ready(function () {
-            alert('loaded');
-        });
+        
         function hello(){
             window.location.replace(window.location.origin + '/Penjaminan/ViewMitra');
         }
         function download(id) {
-            window.location.replace(window.location.origin + '/Penjaminan/EntryMitra?eType=download&eID=' + id);
+            window.location.replace(window.location.origin + '/Penjaminan/PreviewMitra?eType=download&eID=' + id);
 
         }
     </script>
@@ -595,12 +589,16 @@
                                     </div>
                                 </div>
                                  <div class="row">
-                                    <label class="col-sm-2 col-form-label">Keterangan</label>
-                                    <div class="col-sm-10">
-                                        <div class="form-group">
-                                            <input class="form-control" id="textKeterangan" runat="server" value="" rows="6" required />
-                                        </div>
-                                    </div>
+                                     <div class="col-md-12">
+                                         <div>
+                                            <label class="col-md-3"><strong>Alasan Persetujuan atau Penolakan</strong></label>
+                                         </div>
+                                         <div class="col-md-12">
+                                                <div>
+                                                    <input class="form-control" id="textKeterangan" runat="server" value="" rows="6" required />
+                                                </div>
+                                         </div>
+                                      </div>                                   
                                 </div>
                                 <div class="row">
                                     <label class="col-sm-2 col-form-label label-checkbox">&nbsp;</label>

@@ -64,7 +64,7 @@ namespace Penjaminan.Penjaminan {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtNilai;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNilai;
         
         /// <summary>
         /// txtTanggalSerah control.

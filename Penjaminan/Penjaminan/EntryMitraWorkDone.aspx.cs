@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -66,8 +67,8 @@ namespace Penjaminan.Penjaminan
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             int tFkMitra = 0;
-            tFkMitra = eID;   
-                    
+            tFkMitra = eID;
+            int nilaiAkhir = int.Parse(Regex.Replace(txtNilai.Value, "[^0-9]+", string.Empty));
             List<Object.WorkDone2> wdList2 = new List<Object.WorkDone2>();
             Object.WorkDone2 wd2 = new Object.WorkDone2();
 
@@ -80,7 +81,7 @@ namespace Penjaminan.Penjaminan
             wd2.namapaket = txtName.Value;
             wd2.lokasi = txtLokasi.Value;
             wd2.tanggalpelaksanaan = DateTime.Parse(txtTanggalPelaksanaan.Value);
-            wd2.nilai = decimal.Parse(txtNilai.Value);
+            wd2.nilai = nilaiAkhir;
             wd2.tanggalserah = DateTime.Parse(txtTanggalSerah.Value);
 
            if(eType == "add")
@@ -99,7 +100,7 @@ namespace Penjaminan.Penjaminan
                 wd.namapaket = txtName.Value;
                 wd.lokasi = txtLokasi.Value ;
                 wd.tanggalpelaksanaan =Convert.ToDateTime(txtTanggalPelaksanaan.Value);
-                wd.nilai = decimal.Parse(txtNilai.Value);
+                wd.nilai = nilaiAkhir;
                 wd.tanggalserah = Convert.ToDateTime(txtTanggalSerah.Value);
                 tFkMitra = wd.fk_mitra;
             }

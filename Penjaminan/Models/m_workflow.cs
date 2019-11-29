@@ -33,7 +33,7 @@ namespace Penjaminan.Models
         public static void UpdateData(int Id, int Sequence, string Name, string Description)
         {
             PenjaminanDatasetTableAdapters.m_workflowTableAdapter ta = new PenjaminanDatasetTableAdapters.m_workflowTableAdapter();
-            PenjaminanDataset.m_workflowDataTable dt = ta.GetDataWorkflowByID(Id);
+            PenjaminanDataset.m_workflowDataTable dt = ta.GetDataWprkflowByID(Id);
 
             try
             {
@@ -60,7 +60,7 @@ namespace Penjaminan.Models
 
             try
             {
-                ta.Insert(1, 1, Name, Description, 1, DateTime.Now, 1, DateTime.Now, 0);
+                ta.Insert(1,1,1, Name, Description, 1, DateTime.Now, 1, DateTime.Now, "0");
             }
             catch (Exception ex)
             {
@@ -71,13 +71,13 @@ namespace Penjaminan.Models
         public static void SoftDeleteData(int id)
         {
             PenjaminanDatasetTableAdapters.m_workflowTableAdapter ta = new PenjaminanDatasetTableAdapters.m_workflowTableAdapter();
-            PenjaminanDataset.m_workflowDataTable dt = ta.GetDataWorkflowByID(id);
+            PenjaminanDataset.m_workflowDataTable dt = ta.GetDataWprkflowByID(id);
 
             try
             {
                 if (dt != null)
                 {
-                    dt[0].deleted = 1;
+                    dt[0].deleted = "1";
 
                     ta.Update(dt);
                 }

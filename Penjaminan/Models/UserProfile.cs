@@ -29,8 +29,7 @@ namespace Penjaminan.Models
             {
                 throw new ApplicationException("Failed to load user profile data : " + ex.Message);
             }
-        }
-
+        }        
         public static void UpdateData(int Id, string Username, string Password, int Role, int Division)
         {
             PenjaminanDatasetTableAdapters.UserProfileTableAdapter ta = new PenjaminanDatasetTableAdapters.UserProfileTableAdapter();
@@ -59,10 +58,13 @@ namespace Penjaminan.Models
         public static void InsertData(string Username, string Password, int Role, int Division)
         {
             PenjaminanDatasetTableAdapters.UserProfileTableAdapter ta = new PenjaminanDatasetTableAdapters.UserProfileTableAdapter();
-
             try
             {
-                ta.Insert(Username, Password, Role.ToString(), Division.ToString(), 1, DateTime.Now, 1, DateTime.Now, 0);
+                var data = ta.validasiEmail(Username);
+                if(data == 0)
+                {
+                    ta.Insert(Username, Password, Role.ToString(), Division.ToString(), 1, DateTime.Now, 1, DateTime.Now, 0);
+                }                
             }
             catch (Exception ex)
             {

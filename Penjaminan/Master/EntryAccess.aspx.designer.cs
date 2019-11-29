@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Penjaminan.Penjaminan {
+namespace Penjaminan.Master {
     
     
-    public partial class EntryMitraPemegangSaham {
+    public partial class EntryAccess {
         
         /// <summary>
         /// lblMenu control.
@@ -31,39 +31,21 @@ namespace Penjaminan.Penjaminan {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden txtId;
         
         /// <summary>
-        /// txtName control.
+        /// RoleList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtName;
+        protected global::System.Web.UI.WebControls.DropDownList RoleList;
         
         /// <summary>
-        /// txtJumlahSaham control.
+        /// PageList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtJumlahSaham;
-        
-        /// <summary>
-        /// txtTotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTotal;
-        
-        /// <summary>
-        /// txtPersentase control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtPersentase;
+        protected global::System.Web.UI.WebControls.DropDownList PageList;
     }
 }

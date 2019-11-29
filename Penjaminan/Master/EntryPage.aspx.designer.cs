@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Penjaminan.Penjaminan {
+namespace Penjaminan.Master {
     
     
-    public partial class EntryMitraPemegangSaham {
+    public partial class EntryPage {
         
         /// <summary>
         /// lblMenu control.
@@ -40,30 +40,39 @@ namespace Penjaminan.Penjaminan {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtName;
         
         /// <summary>
-        /// txtJumlahSaham control.
+        /// txtControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtJumlahSaham;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtControl;
         
         /// <summary>
-        /// txtTotal control.
+        /// txtActive control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTotal;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtActive;
         
         /// <summary>
-        /// txtPersentase control.
+        /// txtIcon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtPersentase;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtIcon;
+        
+        /// <summary>
+        /// listmenuparent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList listmenuparent;
     }
 }
